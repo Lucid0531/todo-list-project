@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(58, 62, 66);
+  color: white;
+}
+
+.todo-section {
+  margin: 40px;
+}
+
+.todo-list, .todo-list-input {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  gap: 10px;
+}
+
+.todo-list-input {
+  margin: 10px 0;
+}
+
+#todo-input, #date-input {
+  padding: 6px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  color: gray;
+}
+
+#delete-btn, #addBtn {
+  color: white;
+  padding: 6px 10px;  
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#addBtn {
+  background: rgb(65, 222, 65);
+}
+
+#addBtn:hover {
+  background: rgb(81, 239, 81);
+}
+
+#delete-btn {
+  background: rgb(211, 42, 42);
+}
+
+#delete-btn:hover {
+  background: rgb(230, 49, 49);
+}
+
+.text {
+  text-transform: capitalize;
+}

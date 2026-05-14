@@ -1,6 +1,5 @@
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 renderTask();
-console.log(tasks);
 
 // Add task and render list using DOM
 const addBtn = document.querySelector('#addBtn');
@@ -21,7 +20,7 @@ function addTodo() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
   todoInput.value = "";
   dateInput.value = "";
-  renderTask();
+  window.location.reload();
 }
 
 function renderTask() {
@@ -30,8 +29,8 @@ function renderTask() {
   
   tasks.forEach((task) => {
     todoList.innerHTML += `
-      <p>${task.text}</p>
-      <p>${task.date}</p>
+      <p class="text">${task.text}</p>
+      <p class="date">${task.date}</p>
       <button id="delete-btn" data-id="${task.id}">Delete</button>
     `;
   });
@@ -45,7 +44,7 @@ document.querySelectorAll('#delete-btn')
         if(button.dataset.id === task.id) {
           tasks.splice(i, 1);
           localStorage.setItem('tasks', JSON.stringify(tasks));
-          renderTask();
+          window.location.reload();
         }
         i++;
       });
